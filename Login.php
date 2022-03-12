@@ -14,7 +14,7 @@
 
 
     mysqli_stmt_store_result($statement);
-    mysqli_stmt_bind_result($statement, $id, $pw, $name);
+    mysqli_stmt_bind_result($statement, $id, $pw, $name, $secondpw);
 
     $response = array();
     $response["success"] = false;
@@ -24,6 +24,7 @@
         $response["id"] = $id;
         $response["pw"] = $pw;
         $response["name"] = $name;
+        $response["secondpw"] = $secondpw;
     }
 
     echo json_encode($response);
